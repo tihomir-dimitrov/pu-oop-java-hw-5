@@ -19,6 +19,8 @@ public class GameTile extends JFrame {
 
                 boardGrid(g);
                 PixelsAboutToBurn(g);
+                BurnedPixel(g);
+                GoodPixel(g);
             }
         }
     }
@@ -35,5 +37,15 @@ public class GameTile extends JFrame {
     void PixelsAboutToBurn(Graphics g){
         g.setColor(Color.BLUE);
         g.fillRect(10,30,10,10);
+    }
+    
+    void BurnedPixel(Graphics g){
+        g.setColor(Color.RED);
+        g.fillRect(10,40,10,10);
+    }
+
+    void GoodPixel(Graphics g){
+        g.setColor(Color.GREEN);
+        g.fillRect(10,50,10,10);
     }
 }
