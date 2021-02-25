@@ -21,7 +21,7 @@ public class GameBoard extends JFrame {
                 GameTile tile = new GameTile(row, col);
                 tile.boardGrid(g);
                 tile.render(g);
-                tile.PixelsAboutToBurn(g);
+                tile.PixelAboutToBurn(g);
                 tile.BurnedPixel(g);
                 tile.GoodPixel(g);
             }
