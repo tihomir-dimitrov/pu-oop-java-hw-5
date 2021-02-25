@@ -44,14 +44,18 @@ public class GameTile extends JFrame {
         return rand;
     }
 
+
     public void PixelAboutToBurn(Graphics g){
 
         int p1 = RandomPixels();
 
         g.setColor(Color.BLUE);
-        g.fillRect((p1*50)+10,30,10,10);
-        g.fillRect((p1*500)+20,40,10,10);
-        g.fillRect((p1*10)+30,60,10,10);
+        g.fillRect((p1*10)+10,30,10,10);
+        g.fillRect((p1*10)+20,40,10,10);
+        g.fillRect((p1*10)+30,50,10,10);
+        g.fillRect((p1*10)+40,60,10,10);
+        g.fillRect((p1*10)+50,70,10,10);
+        g.fillRect((p1*10)+60,80,10,10);
     }
 
     public void BurnedPixel(Graphics g){
@@ -59,13 +63,22 @@ public class GameTile extends JFrame {
         int p2 = RandomPixels();
 
         g.setColor(Color.RED);
-        g.fillRect((p2*50)+10,30,10,10);
-        g.fillRect((p2*80)+10,40,10,10);
-        g.fillRect((p2*50)+10,80,10,10);
+        g.fillRect((p2*10)+10,30,10,10);
+        g.fillRect((p2*10)+10,90,10,10);
+        g.fillRect((p2*10)+10,100,10,10);
+        g.fillRect((p2*10)+10,110,10,10);
+        g.fillRect((p2*10)+10,120,10,10);
     }
 
     void GoodPixel(Graphics g){
+
+        int p3 = RandomPixels();
+
         g.setColor(Color.GREEN);
-        g.fillRect(10, 50, 10, 10);
+        g.fillRect((p3*10)+50, 200, 10, 10);
+        g.fillRect((p3*10)+10, 150, 10, 10);
+        g.fillRect((p3*10)+10, 50, 10, 10);
+        g.fillRect((p3*10)+10, 70, 10, 10);
+        g.fillRect((p3*10)+10, 90, 10, 10);
     }
 }
