@@ -2,6 +2,7 @@ package Game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Random;
 
 public class GameTile extends JFrame {
 
@@ -18,7 +19,7 @@ public class GameTile extends JFrame {
             for (int y = 0; y<640;y++){
 
                 boardGrid(g);
-                PixelsAboutToBurn(g);
+                PixelAboutToBurn(g);
                 BurnedPixel(g);
                 GoodPixel(g);
             }
@@ -34,18 +35,37 @@ public class GameTile extends JFrame {
         }
     }
 
-    void PixelsAboutToBurn(Graphics g){
-        g.setColor(Color.BLUE);
-        g.fillRect(10,30,10,10);
+    private int RandomPixels() {
+        Random random = new Random();
+        int rand = random.nextInt(8);
+        while (rand == 2) {
+            rand = random.nextInt(8);
+        }
+        return rand;
     }
-    
-    void BurnedPixel(Graphics g){
+
+    public void PixelAboutToBurn(Graphics g){
+
+        int p1 = RandomPixels();
+
+        g.setColor(Color.BLUE);
+        g.fillRect((p1*50)+10,30,10,10);
+        g.fillRect((p1*500)+20,40,10,10);
+        g.fillRect((p1*10)+30,60,10,10);
+    }
+
+    public void BurnedPixel(Graphics g){
+
+        int p2 = RandomPixels();
+
         g.setColor(Color.RED);
-        g.fillRect(10,40,10,10);
+        g.fillRect((p2*50)+10,30,10,10);
+        g.fillRect((p2*80)+10,40,10,10);
+        g.fillRect((p2*50)+10,80,10,10);
     }
 
     void GoodPixel(Graphics g){
         g.setColor(Color.GREEN);
-        g.fillRect(10,50,10,10);
+        g.fillRect(10, 50, 10, 10);
     }
 }
